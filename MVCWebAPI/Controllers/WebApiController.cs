@@ -19,6 +19,7 @@ namespace MVCWebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("get")]
         public string Get()
         {
             return _businessValueProvider.ProvideValue();

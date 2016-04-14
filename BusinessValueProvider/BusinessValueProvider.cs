@@ -4,7 +4,7 @@
     {
         public string ProvideValue()
         {
-            return "I am value";
+            return "I am a value";
         }
     }
 }
