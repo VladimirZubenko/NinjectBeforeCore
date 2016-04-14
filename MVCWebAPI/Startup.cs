@@ -35,6 +35,9 @@ namespace MVCWebAPI
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
+            //Get a per-request scope into Owin pipeline.
+            app.CreatePerOwinContext(() => NinjectCommon.ServciceLocator.BeginScope());
+
             app.UseWebApi(config);
         }
     }
